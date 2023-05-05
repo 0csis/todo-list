@@ -1,5 +1,7 @@
 import { newDefaultButtonListener } from './newDefaultButtonListener';
 import { orderToDos } from './orderToDos';
+import { ToDoCreator } from './toDoCreator';
+import { addDefaultToDo } from './addDefaultToDo';
 
 const toDos = [{
   title: 'test1', description: 'it is a test', dueDate: '03-02-2024', priority: 1,
@@ -10,5 +12,3 @@ const toDos = [{
 }, {
   title: 'test4', description: 'it is a test4', dueDate: '11-01-2023', priority: 2,
 }];
-
-newDefaultButtonListener();
