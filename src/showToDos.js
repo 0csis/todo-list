@@ -1,6 +1,8 @@
 import { orderToDos } from './orderToDos';
 import Icon from './lead-pencil.svg';
+import Remove from './note-remove.svg';
 import { editToDo } from './editToDo';
+import { removeToDo } from './removeToDo';
 
 function showToDos(toDoList) {
   const main = document.querySelector('.main');
@@ -37,9 +39,16 @@ function showToDos(toDoList) {
 
       div.appendChild(row);
     }
+    const removeButton = document.createElement('button');
+    removeButton.classList.add('removeButton');
+    const removeIcon = new Image();
+    removeIcon.src = Remove;
+    removeButton.appendChild(removeIcon);
+    div.appendChild(removeButton);
     main.appendChild(div);
   }
 
+  removeToDo(toDoList);
   editToDo(toDoList);
 }
 

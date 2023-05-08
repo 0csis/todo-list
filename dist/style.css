@@ -38,10 +38,16 @@ form {
 .main {
   grid-row: 2 / 3;
   grid-column: 2 / 3;
+  display: flex;
+  gap: 0.1rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .toDo {
-  margin-bottom: 0.5rem;
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
 }
 
 .property {
@@ -57,9 +63,18 @@ form {
 .row {
   display: flex;
   gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.editButton,
+.removeButton {
+  width: 1rem;
+  border: none; 
 }
 
 .editButton {
-  width: 1rem;
-  border: none; 
+}
+
+.removeButton {
+  align-self: center;
 }
