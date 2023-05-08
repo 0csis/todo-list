@@ -1,3 +1,4 @@
+import { removeMainChildren } from './removeMainChildren';
 import { showToDos } from './showToDos';
 
 function editToDo(toDoList) {
@@ -47,6 +48,8 @@ function editToDo(toDoList) {
                 break;
               case 'Due date:':
                 toDoList[i]['Due date'] = input.value;
+                removeMainChildren();
+                showToDos(toDoList);
                 break;
               case 'Priority:':
                 toDoList[i].Priority = input.value;
