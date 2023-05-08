@@ -48,8 +48,8 @@ function showToDos(toDoList) {
     main.appendChild(div);
   }
 
-  removeToDo(toDoList);
   editToDo(toDoList);
+  removeToDo(toDoList);
 }
 
 export { showToDos };
