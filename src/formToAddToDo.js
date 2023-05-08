@@ -1,5 +1,6 @@
 import { addDefaultToDo } from './addDefaultToDo';
 import { ToDoCreator } from './toDoCreator';
+import { showToDos } from './showToDos';
 
 function formToAddToDo(toDosList) {
 //  Create a form to add a new to-do info
@@ -84,6 +85,7 @@ function formToAddToDo(toDosList) {
 
     // Remove the form and make the main screen appear again
     formContainer.removeChild(form);
+    showToDos(toDosList);
     container.style.display = 'grid';
   });
 }
