@@ -42,6 +42,7 @@ function formToAddToDo(toDosList) {
   const input3 = document.createElement('input');
   input3.setAttribute('type', 'date');
   input3.setAttribute('id', 'dueDate');
+  input3.setAttribute('required', 'true');
   label3.appendChild(input3);
   div3.appendChild(label3);
   form.appendChild(div3);

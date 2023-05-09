@@ -69,12 +69,26 @@ form {
 .editButton,
 .removeButton {
   width: 1rem;
-  border: none; 
-}
-
-.editButton {
+  border: none;
 }
 
 .removeButton {
   align-self: center;
+}
+
+.newProjectForm {
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projectLabel {
+  border: none;
+}
+
+.projectDiv {
+  width: 8rem;
+  border: none;
+  margin-right: 0.5rem;
 }

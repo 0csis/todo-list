@@ -19,6 +19,7 @@ function editToDo(toDoList) {
           break;
         case 'Due date:':
           input.type = 'date';
+          input.setAttribute('required', 'true');
           break;
         case 'Priority:':
           input.type = 'range';
