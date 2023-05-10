@@ -1,6 +1,7 @@
 import { orderProjects } from './orderProjects';
 import { projectEventListener } from './projectEventListener';
 import { defaultEventListener } from './defaultEventListener';
+import { newProjectToDoButtonListener } from './newProjectToDoButtonListener';
 
 function showProjectsList(projectsList, toDoList) {
   const projects = document.querySelector('.projects');
@@ -27,10 +28,16 @@ function showProjectsList(projectsList, toDoList) {
       projectDetail.textContent = `${value}`;
       project.appendChild(projectDetail);
     }
+    const addToDoInProject = document.createElement('button');
+    addToDoInProject.classList.add('addToDoInProject');
+    addToDoInProject.textContent = 'Add to-do';
+    project.appendChild(addToDoInProject);
+
     projects.appendChild(project);
   }
   projectEventListener(projectsList);
   defaultEventListener(toDoList);
+  newProjectToDoButtonListener();
 }
 
 export { showProjectsList };

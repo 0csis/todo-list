@@ -8,6 +8,7 @@ import { formToAddProject } from './formToAddProject';
 
 const toDos = [];
 const projects = [];
+const project = [];
 
 newDefaultButtonListener(toDos);
 newProjectButtonListener(projects, toDos);
