@@ -10,4 +10,4 @@ const toDos = [];
 const projects = [];
 
 newDefaultButtonListener(toDos);
-newProjectButtonListener(projects);
+newProjectButtonListener(projects, toDos);

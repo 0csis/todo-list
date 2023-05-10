@@ -1,6 +1,8 @@
 import { orderProjects } from './orderProjects';
+import { projectEventListener } from './projectEventListener';
+import { defaultEventListener } from './defaultEventListener';
 
-function showProjectsList(projectsList) {
+function showProjectsList(projectsList, toDoList) {
   const projects = document.querySelector('.projects');
 
   if (projects.hasChildNodes()) {
@@ -27,6 +29,8 @@ function showProjectsList(projectsList) {
     }
     projects.appendChild(project);
   }
+  projectEventListener(projectsList);
+  defaultEventListener(toDoList);
 }
 
 export { showProjectsList };

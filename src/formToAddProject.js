@@ -2,7 +2,7 @@ import { addProject } from './addProject';
 import { ProjectCreator } from './projectCreator';
 import { showProjectsList } from './showProjectsList';
 
-function formToAddProject(projectsList) {
+function formToAddProject(projectsList, toDoList) {
   const projectsSidebar = document.querySelector('.projectsSidebar');
   const newProjectForm = document.createElement('form');
   newProjectForm.classList.add('newProjectForm');
@@ -45,8 +45,7 @@ function formToAddProject(projectsList) {
     // enable new project button again
     const newProjectButton = document.querySelector('.newProject');
     newProjectButton.disabled = false;
-    console.log(projectsList);
-    showProjectsList(projectsList);
+    showProjectsList(projectsList, toDoList);
   });
 }
 
