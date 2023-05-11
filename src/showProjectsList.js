@@ -2,6 +2,8 @@ import { orderProjects } from './orderProjects';
 import { projectEventListener } from './projectEventListener';
 import { defaultEventListener } from './defaultEventListener';
 import { newProjectToDoButtonListener } from './newProjectToDoButtonListener';
+import Icon from './lead-pencil.svg';
+import Remove from './note-remove.svg';
 
 function showProjectsList(projectsList, toDoList) {
   const projects = document.querySelector('.projects');
@@ -21,7 +23,7 @@ function showProjectsList(projectsList, toDoList) {
     project.classList.add('project');
     project.classList.add(`${i}`);
     divs.push(project);
-    for (let j = 0; j < Object.keys(projectsList[i]).length; j++) {
+    for (let j = 0; j < Object.keys(projectsList[i]).length - 1; j++) {
       const value = Object.values(projectsList[i])[j];
       const projectDetail = document.createElement('div');
       projectDetail.classList.add('projectDetail');
@@ -37,7 +39,7 @@ function showProjectsList(projectsList, toDoList) {
   }
   projectEventListener(projectsList);
   defaultEventListener(toDoList);
-  newProjectToDoButtonListener();
+  newProjectToDoButtonListener(projectsList);
 }
 
 export { showProjectsList };

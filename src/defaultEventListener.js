@@ -1,3 +1,4 @@
+import { removeMainChildren } from './removeMainChildren';
 import { showToDos } from './showToDos';
 
 function defaultEventListener(toDoList) {
@@ -5,9 +6,11 @@ function defaultEventListener(toDoList) {
   const main = document.querySelector('.main');
 
   defaultToDo.addEventListener('click', () => {
-    if (!main.hasChildNodes()) {
-      showToDos(toDoList);
-    }
+    // if (!main.hasChildNodes()) {
+    // showToDos(toDoList);
+    // }
+    removeMainChildren();
+    showToDos(toDoList);
   });
 }
 
