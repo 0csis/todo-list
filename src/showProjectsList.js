@@ -2,8 +2,8 @@ import { orderProjects } from './orderProjects';
 import { projectEventListener } from './projectEventListener';
 import { defaultEventListener } from './defaultEventListener';
 import { newProjectToDoButtonListener } from './newProjectToDoButtonListener';
-import Icon from './lead-pencil.svg';
-import Remove from './note-remove.svg';
+import { removeProject } from './removeProject';
+import Remove from './note-remove-outline.svg';
 
 function showProjectsList(projectsList, toDoList) {
   const projects = document.querySelector('.projects');
@@ -28,8 +28,17 @@ function showProjectsList(projectsList, toDoList) {
       const projectDetail = document.createElement('div');
       projectDetail.classList.add('projectDetail');
       projectDetail.textContent = `${value}`;
+
       project.appendChild(projectDetail);
     }
+    const removeButton = document.createElement('button');
+    removeButton.classList.add('removeButton');
+    removeButton.classList.add('removeProjectButton');
+    const removeIcon = new Image();
+    removeIcon.src = Remove;
+    removeButton.appendChild(removeIcon);
+    project.appendChild(removeButton);
+
     const addToDoInProject = document.createElement('button');
     addToDoInProject.classList.add('addToDoInProject');
     addToDoInProject.textContent = 'Add to-do';
@@ -40,6 +49,7 @@ function showProjectsList(projectsList, toDoList) {
   projectEventListener(projectsList);
   defaultEventListener(toDoList);
   newProjectToDoButtonListener(projectsList);
+  removeProject(projectsList, toDoList);
 }
 
 export { showProjectsList };

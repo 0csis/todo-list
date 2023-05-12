@@ -11,8 +11,7 @@ function removeToDo(toDoList) {
       // there too
       for (let indexToDo = 0; indexToDo < toDoList.length; indexToDo++) {
         if (parent.classList.contains(`${indexToDo}`)) {
-          console.log(indexToDo);
-          console.log(toDoList.splice(indexToDo, 1));
+          toDoList.splice(indexToDo, 1);
           return;
         }
       }
