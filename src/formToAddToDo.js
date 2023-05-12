@@ -4,8 +4,8 @@ import { showToDos } from './showToDos';
 
 function formToAddToDo(toDosList) {
 //  Create a form to add a new to-do info
-  const formContainer = document.querySelector('body');
-  formContainer.classList.add('formContainer');
+
+  const main = document.querySelector('.main');
 
   const form = document.createElement('form');
   form.classList.add('defaultForm');
@@ -13,6 +13,7 @@ function formToAddToDo(toDosList) {
   const div = document.createElement('div');
   div.classList.add('defaultForm-control');
   const label = document.createElement('label');
+  label.classList.add('defaultFormLabel');
   label.setAttribute('for', 'title');
   label.textContent = 'Title';
   const input = document.createElement('input');
@@ -25,6 +26,7 @@ function formToAddToDo(toDosList) {
   const div2 = document.createElement('div');
   div2.classList.add('defaultForm-control');
   const label2 = document.createElement('label');
+  label2.classList.add('defaultFormLabel');
   label2.setAttribute('for', 'description');
   label2.textContent = 'Description';
   const input2 = document.createElement('input');
@@ -37,6 +39,7 @@ function formToAddToDo(toDosList) {
   const div3 = document.createElement('div');
   div3.classList.add('defaultForm-control');
   const label3 = document.createElement('label');
+  label3.classList.add('defaultFormLabel');
   label3.setAttribute('for', 'dueDate');
   label3.textContent = 'Due date';
   const input3 = document.createElement('input');
@@ -50,6 +53,7 @@ function formToAddToDo(toDosList) {
   const div4 = document.createElement('div');
   div4.classList.add('defaultForm-control');
   const label4 = document.createElement('label');
+  label4.classList.add('defaultFormLabel');
   label4.setAttribute('for', 'priority');
   label4.textContent = 'Priority';
   const input4 = document.createElement('input');
@@ -65,14 +69,11 @@ function formToAddToDo(toDosList) {
   div5.classList.add('defaultForm-control');
   const button = document.createElement('button');
   button.classList.add('add');
-  button.textContent = '+';
+  button.textContent = 'Add';
   div5.appendChild(button);
   form.appendChild(div5);
 
-  formContainer.appendChild(form);
-
-  // Select the main screen to be able to make it appear again after finishing the form
-  const container = document.querySelector('.container');
+  main.appendChild(form);
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -85,9 +86,8 @@ function formToAddToDo(toDosList) {
     addDefaultToDo(new ToDoCreator(title, description, dueDate, priority), toDosList);
 
     // Remove the form and make the main screen appear again
-    formContainer.removeChild(form);
+    main.removeChild(form);
     showToDos(toDosList);
-    container.style.display = 'grid';
   });
 }
 

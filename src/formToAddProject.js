@@ -30,7 +30,7 @@ function formToAddProject(projectsList, toDoList) {
   div.appendChild(label2);
   newProjectForm.appendChild(div);
 
-  projectsSidebar.appendChild(newProjectForm);
+  projectsSidebar.insertBefore(newProjectForm, projectsSidebar.children[1].nextSibling);
 
   newProjectForm.addEventListener('submit', (event) => {
     event.preventDefault();

@@ -3,11 +3,9 @@ import { removeMainChildren } from './removeMainChildren';
 
 function newProjectToDoButtonListener(projectsList) {
   const addToDoInProject = document.querySelectorAll('.addToDoInProject');
-  const container = document.querySelector('.container');
 
   addToDoInProject.forEach((addToDoButton) => {
     addToDoButton.addEventListener('click', () => {
-      container.style.display = 'none';
       removeMainChildren();
 
       const parent = addToDoButton.parentElement;

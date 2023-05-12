@@ -4,8 +4,7 @@ import { showToDos } from './showToDos';
 
 function formToAddProjectsToDo(project) {
   // Create a form to add new to-do info
-  const formContainer = document.querySelector('body');
-  formContainer.classList.add('formContainer');
+  const main = document.querySelector('.main');
 
   const form = document.createElement('form');
   form.classList.add('projectForm');
@@ -69,10 +68,7 @@ function formToAddProjectsToDo(project) {
   div5.appendChild(button);
   form.appendChild(div5);
 
-  formContainer.appendChild(form);
-
-  // Select the main screen to be able to make it appear again after finishing the form
-  const container = document.querySelector('.container');
+  main.appendChild(form);
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -85,9 +81,8 @@ function formToAddProjectsToDo(project) {
     addProjectToDo(new ToDoCreator(title, description, dueDate, priority), project);
 
     // Remove the form and make the main screen appear again
-    formContainer.removeChild(form);
+    main.removeChild(form);
     showToDos(project);
-    container.style.display = 'grid';
   });
 }
 
