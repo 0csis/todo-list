@@ -12,6 +12,7 @@ function formToAddProjectsToDo(project) {
   const div = document.createElement('div');
   div.classList.add('projectFormControl');
   const label = document.createElement('label');
+  label.classList.add('projectFormLabel');
   label.setAttribute('for', 'title');
   label.textContent = 'Title';
   const input = document.createElement('input');
@@ -24,6 +25,7 @@ function formToAddProjectsToDo(project) {
   const div2 = document.createElement('div');
   div2.classList.add('projectFormControl');
   const label2 = document.createElement('label');
+  label2.classList.add('projectFormLabel');
   label2.setAttribute('for', 'description');
   label2.textContent = 'Description';
   const input2 = document.createElement('input');
@@ -36,6 +38,7 @@ function formToAddProjectsToDo(project) {
   const div3 = document.createElement('div');
   div3.classList.add('projectFormControl');
   const label3 = document.createElement('label');
+  label3.classList.add('projectFormLabel');
   label3.setAttribute('for', 'dueDate');
   label3.textContent = 'Due date';
   const input3 = document.createElement('input');
@@ -49,6 +52,7 @@ function formToAddProjectsToDo(project) {
   const div4 = document.createElement('div');
   div4.classList.add('projectFormControl');
   const label4 = document.createElement('label');
+  label4.classList.add('projectFormLabel');
   label4.setAttribute('for', 'priority');
   label4.textContent = 'Priority';
   const input4 = document.createElement('input');
@@ -64,7 +68,7 @@ function formToAddProjectsToDo(project) {
   div5.classList.add('projectFormControl');
   const button = document.createElement('button');
   button.classList.add('add');
-  button.textContent = '+';
+  button.textContent = 'Add';
   div5.appendChild(button);
   form.appendChild(div5);
 
