@@ -3,6 +3,7 @@ import { projectEventListener } from './projectEventListener';
 import { defaultEventListener } from './defaultEventListener';
 import { newProjectToDoButtonListener } from './newProjectToDoButtonListener';
 import { removeProject } from './removeProject';
+import { saveProjects } from './saveProjects';
 import Remove from './note-remove-outline.svg';
 
 function showProjectsList(projectsList, toDoList) {
@@ -50,6 +51,7 @@ function showProjectsList(projectsList, toDoList) {
   defaultEventListener(toDoList);
   newProjectToDoButtonListener(projectsList);
   removeProject(projectsList, toDoList);
+  saveProjects(projectsList);
 }
 
 export { showProjectsList };

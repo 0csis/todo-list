@@ -11,7 +11,7 @@ function newProjectToDoButtonListener(projectsList) {
       const parent = addToDoButton.parentElement;
       for (let i = 0; i < projectsList.length; i++) {
         if (parent.classList.contains(`${i}`)) {
-          formToAddProjectsToDo(projectsList[i].project);
+          formToAddProjectsToDo(projectsList, projectsList[i].project);
         }
       }
     });

@@ -5,9 +5,26 @@ import { addDefaultToDo } from './addDefaultToDo';
 import { formToAddToDo } from './formToAddToDo';
 import { newProjectButtonListener } from './newProjectButtonListener';
 import { formToAddProject } from './formToAddProject';
+import { retrieveToDos } from './retrieveToDos';
+import { retrieveProjects } from './retrieveProjects';
+import { showToDos } from './showToDos';
+import { showProjectsList } from './showProjectsList';
+import { defaultEventListener } from './defaultEventListener';
+import { newProjectToDoButtonListener } from './newProjectToDoButtonListener';
+import { projectEventListener } from './projectEventListener';
 
-const toDos = [];
-const projects = [];
+let toDos = [];
+let projects = [];
+toDos = retrieveToDos(toDos);
+projects = retrieveProjects(projects);
+showToDos(toDos);
+showProjectsList(projects, toDos);
+
+// localStorage.clear();
+
+defaultEventListener(toDos);
 
 newDefaultButtonListener(toDos);
 newProjectButtonListener(projects, toDos);
+newProjectToDoButtonListener(projects);
+projectEventListener(projects);

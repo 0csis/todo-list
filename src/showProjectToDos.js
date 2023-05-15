@@ -3,9 +3,9 @@ import Icon from './lead-pencil.svg';
 import Remove from './note-remove.svg';
 import { editToDo } from './editToDo';
 import { removeToDo } from './removeToDo';
-import { saveToDos } from './saveToDos';
+import { saveProjects } from './saveProjects';
 
-function showToDos(toDoList) {
+function showProjectToDos(projectsList, toDoList) {
   const main = document.querySelector('.main');
 
   orderToDos(toDoList);
@@ -51,7 +51,7 @@ function showToDos(toDoList) {
 
   editToDo(toDoList);
   removeToDo(toDoList);
-  saveToDos(toDoList);
+  saveProjects(projectsList);
 }
 
-export { showToDos };
+export { showProjectToDos };

@@ -1,4 +1,5 @@
 import { removeMainChildren } from './removeMainChildren';
+import { saveProjects } from './saveProjects';
 import { showToDos } from './showToDos';
 
 function projectEventListener(projectsList) {
@@ -15,6 +16,7 @@ function projectEventListener(projectsList) {
           showToDos(projectsList[i].project);
         }
       }
+      saveProjects(projectsList);
     });
   });
 }
