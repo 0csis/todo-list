@@ -2,7 +2,7 @@ import { addDefaultToDo } from './addDefaultToDo';
 import { ToDoCreator } from './toDoCreator';
 import { showToDos } from './showToDos';
 
-function formToAddToDo(toDosList) {
+function formToAddToDo(projectsList, toDosList) {
 //  Create a form to add a new to-do info
 
   const main = document.querySelector('.main');
@@ -87,7 +87,7 @@ function formToAddToDo(toDosList) {
 
     // Remove the form and make the main screen appear again
     main.removeChild(form);
-    showToDos(toDosList);
+    showToDos(projectsList, toDosList);
   });
 }
 

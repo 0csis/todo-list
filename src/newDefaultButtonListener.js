@@ -3,15 +3,15 @@ import { addDefaultToDo } from './addDefaultToDo';
 import { formToAddToDo } from './formToAddToDo';
 import { removeMainChildren } from './removeMainChildren';
 
-function newDefaultButtonListener(toDosList) {
+function newDefaultButtonListener(projectsList, toDosList) {
   const newDefaultButton = document.querySelector('.newDefault');
- // const container = document.querySelector('.container');
+  // const container = document.querySelector('.container');
 
   newDefaultButton.addEventListener('click', () => {
     removeMainChildren();
 
     // display form to get the new to-do information
-    formToAddToDo(toDosList);
+    formToAddToDo(projectsList, toDosList);
   });
 }
 

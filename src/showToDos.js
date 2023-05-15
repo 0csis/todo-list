@@ -5,7 +5,7 @@ import { editToDo } from './editToDo';
 import { removeToDo } from './removeToDo';
 import { saveToDos } from './saveToDos';
 
-function showToDos(toDoList) {
+function showToDos(projectsList, toDoList) {
   const main = document.querySelector('.main');
 
   orderToDos(toDoList);
@@ -49,8 +49,8 @@ function showToDos(toDoList) {
     main.appendChild(div);
   }
 
-  editToDo(toDoList);
-  removeToDo(toDoList);
+  editToDo(projectsList, toDoList);
+  removeToDo(projectsList, toDoList);
   saveToDos(toDoList);
 }
 

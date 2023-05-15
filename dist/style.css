@@ -98,7 +98,8 @@ form {
   background-color: #e9c46a;
 }
 
-.toDo {
+.toDo,
+.projectToDo {
   display: flex;
   width: fit-content;
   flex-direction: column;

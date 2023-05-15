@@ -12,7 +12,7 @@ function showProjectToDos(projectsList, toDoList) {
   const divs = [];
   for (let i = 0; i < toDoList.length; i++) {
     const div = document.createElement('div');
-    div.classList.add('toDo');
+    div.classList.add('projectToDo');
     div.classList.add(`${i}`);
     divs.push(div);
     for (let j = 0; j < Object.keys(toDoList[i]).length; j++) {
@@ -49,9 +49,9 @@ function showProjectToDos(projectsList, toDoList) {
     main.appendChild(div);
   }
 
-  editToDo(toDoList);
-  removeToDo(toDoList);
   saveProjects(projectsList);
+  editToDo(projectsList, toDoList)
+  removeToDo(projectsList, toDoList)
 }
 
 export { showProjectToDos };

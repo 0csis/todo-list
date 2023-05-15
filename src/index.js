@@ -17,14 +17,14 @@ let toDos = [];
 let projects = [];
 toDos = retrieveToDos(toDos);
 projects = retrieveProjects(projects);
-showToDos(toDos);
+showToDos(projects, toDos);
 showProjectsList(projects, toDos);
 
 // localStorage.clear();
 
-defaultEventListener(toDos);
+defaultEventListener(projects, toDos);
 
-newDefaultButtonListener(toDos);
+newDefaultButtonListener(projects, toDos);
 newProjectButtonListener(projects, toDos);
 newProjectToDoButtonListener(projects);
 projectEventListener(projects);

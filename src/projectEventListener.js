@@ -1,6 +1,6 @@
 import { removeMainChildren } from './removeMainChildren';
 import { saveProjects } from './saveProjects';
-import { showToDos } from './showToDos';
+import { showProjectToDos } from './showProjectToDos';
 
 function projectEventListener(projectsList) {
   const projects = document.querySelectorAll('.projectDetail');
@@ -13,7 +13,7 @@ function projectEventListener(projectsList) {
       const parent = project.parentElement;
       for (let i = 0; i < projectsList.length; i++) {
         if (parent.classList.contains(`${i}`)) {
-          showToDos(projectsList[i].project);
+          showProjectToDos(projectsList, projectsList[i].project);
         }
       }
       saveProjects(projectsList);

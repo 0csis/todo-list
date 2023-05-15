@@ -1,7 +1,7 @@
 import { removeMainChildren } from './removeMainChildren';
 import { showToDos } from './showToDos';
 
-function defaultEventListener(toDoList) {
+function defaultEventListener(projectsList, toDoList) {
   const defaultToDo = document.querySelector('.defaultTitle');
   const main = document.querySelector('.main');
 
@@ -10,7 +10,7 @@ function defaultEventListener(toDoList) {
     // showToDos(toDoList);
     // }
     removeMainChildren();
-    showToDos(toDoList);
+    showToDos(projectsList, toDoList);
   });
 }
 

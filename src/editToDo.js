@@ -1,7 +1,10 @@
 import { removeMainChildren } from './removeMainChildren';
+import { saveProjects } from './saveProjects';
+import { saveToDos } from './saveToDos';
 import { showToDos } from './showToDos';
+import { showProjectToDos } from './showProjectToDos';
 
-function editToDo(toDoList) {
+function editToDo(projectsList, toDoList) {
   const editButtons = document.querySelectorAll('.editButton');
 
   editButtons.forEach((editButton) => {
@@ -50,11 +53,21 @@ function editToDo(toDoList) {
               case 'Due date:':
                 toDoList[i]['Due date'] = input.value;
                 removeMainChildren();
-                showToDos(toDoList);
-                break;
+                if (div.classList.contains('projectToDo')) {
+                  showProjectToDos(projectsList, toDoList);
+                  break;
+              } else if (div.classList.contains('toDo')) {
+                  showToDos(projectsList, toDoList);
+                  break;
+                }
               case 'Priority:':
                 toDoList[i].Priority = input.value;
                 break;
+            }
+            if (div.classList.contains('projectToDo')) {
+              saveProjects(projectsList);
+            } else if (div.classList.contains('toDo')) {
+              saveToDos(toDoList);
             }
           }
         }
