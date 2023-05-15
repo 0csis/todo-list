@@ -20,8 +20,6 @@ projects = retrieveProjects(projects);
 showToDos(projects, toDos);
 showProjectsList(projects, toDos);
 
-// localStorage.clear();
-
 defaultEventListener(projects, toDos);
 
 newDefaultButtonListener(projects, toDos);

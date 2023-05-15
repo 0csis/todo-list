@@ -6,11 +6,7 @@ function defaultEventListener(projectsList, toDoList) {
   const main = document.querySelector('.main');
 
   defaultToDo.addEventListener('click', () => {
-    // if (!main.hasChildNodes()) {
-    // showToDos(toDoList);
-    // }
-    removeMainChildren();
-    showToDos(projectsList, toDoList);
+    location.reload();
   });
 }
 
